@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 每一个新添加的实体类(model||entity)都应该在此进行别名配置，如没有配置，使用的时候应该填写全路径 -->
+    <typeAliases>
+    	<typeAlias type="com.slby.model.User" alias="User"/>
+    	<typeAlias type="com.slby.model.Cloth" alias="Cloth"/>
+    	<typeAlias type="com.slby.model.Category" alias="Category"/>
+    </typeAliases> 
+	
+	<plugins>
+        <plugin interceptor="com.slby.util.PagePlugin">
+            <property name="dialect" value="mysql" />
+            <property name="pageSqlId" value=".*ListPage.*" />
+        </plugin>
+    </plugins>
+	
+	<!-- 原先mybatis数据库管理，引入spring后可以删除掉 -->
+    <!-- <environments default="development">
+        <environment id="development">
+        <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+            <property name="driver" value="com.mysql.jdbc.Driver"/>
+            <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis" />
+            <property name="username" value="root"/>
+            <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments> -->
+    
+    <!-- 引入spring后，这些都交给配置SQLSessionFactory时，由  
+    <property name="mapperLocations" value="classpath*:com/yihaomen/mapper/*.xml" /> 
+	去导入了 -->
+    <!-- <mappers>
+        <mapper resource="com/mybatis/inter/IUserOperation"/>
+    </mappers> -->
+</configuration>

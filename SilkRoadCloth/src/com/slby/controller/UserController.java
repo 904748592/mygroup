@@ -1,5 +1,4 @@
 package com.slby.controller;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.slby.dao.UserDao;
 import com.slby.model.User;
 import com.slby.util.PageInfo;
 
@@ -18,21 +16,21 @@ import com.slby.util.PageInfo;
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
-	UserDao iuserMapper;
+//	UserDao iuserMapper;
 
 	@RequestMapping("/list")
 	public ModelAndView listall(HttpServletRequest request,HttpServletResponse response){
-		List<User> users=iuserMapper.selectUsers("123"); 
+//		List<User> users=iuserMapper.selectUsers("123"); 
 		ModelAndView mav=new ModelAndView("list");
-		mav.addObject("users",users);
+//		mav.addObject("users",users);
 		return mav;
 	}
 	
 	@RequestMapping("/detail")
 	public ModelAndView detail(HttpServletRequest request,HttpServletResponse response){
-		User user=iuserMapper.selectUserByID(2); 
+//		User user=iuserMapper.selectUserByID(2); 
 		ModelAndView mav=new ModelAndView("detail");
-		mav.addObject("user",user);
+//		mav.addObject("user",user);
 		return mav;
 	}
 	

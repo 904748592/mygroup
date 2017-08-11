@@ -1,8 +1,7 @@
 package com.slby.model;
 
-import java.io.Serializable;
 
-public class Cloth implements Serializable {
+public class Cloth{
 
 	private int id;
 	private String name;

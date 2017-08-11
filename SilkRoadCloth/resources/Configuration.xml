@@ -8,6 +8,12 @@
     	<typeAlias type="com.slby.model.User" alias="User"/>
     	<typeAlias type="com.slby.model.Cloth" alias="Cloth"/>
     	<typeAlias type="com.slby.model.Category" alias="Category"/>
+    	<typeAlias type="com.slby.model.system.Menu" alias="Menu"/>
+    	<typeAlias type="com.slby.model.system.Role" alias="Role"/>
+    	
+		<!--map封装数据类 -->
+    	<typeAlias type="com.slby.util.PageData" alias="pd"/>
+    	<typeAlias type="com.slby.util.PageInfo" alias="page"/>
     </typeAliases> 
 	
 	<plugins>

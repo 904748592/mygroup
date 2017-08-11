@@ -1,15 +1,12 @@
 package com.slby.model;
 
-import java.io.Serializable;
-import java.util.Date;
 
-public class User implements Serializable {
+public class User{
 
 	private int id;
-	private String usercode;
-	private String password;
 	private String username;
-	private Date createtime;
+	private String password;
+	private String name;
 	private String telephone;
 	private String email;
 	private String realname;
@@ -17,6 +14,7 @@ public class User implements Serializable {
 	private double usemoney;
 	private int status;
 	private int type;
+	private int role_id;
 	
 	public User() {
 		super();
@@ -27,14 +25,13 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public User(int id, String usercode, String password, String username, Date createtime, String telephone,
-			String email, String realname, double leftmoney, double usemoney, int status, int type) {
+	public User(int id, String username, String password, String name, String telephone, String email, String realname,
+			double leftmoney, double usemoney, int status, int type, int role_id) {
 		super();
 		this.id = id;
-		this.usercode = usercode;
-		this.password = password;
 		this.username = username;
-		this.createtime = createtime;
+		this.password = password;
+		this.name = name;
 		this.telephone = telephone;
 		this.email = email;
 		this.realname = realname;
@@ -42,6 +39,7 @@ public class User implements Serializable {
 		this.usemoney = usemoney;
 		this.status = status;
 		this.type = type;
+		this.role_id = role_id;
 	}
 
 	public int getId() {
@@ -52,12 +50,12 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public String getUsercode() {
-		return usercode;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUsercode(String usercode) {
-		this.usercode = usercode;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -68,20 +66,12 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public Date getCreatetime() {
-		return createtime;
-	}
-
-	public void setCreatetime(Date createtime) {
-		this.createtime = createtime;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getTelephone() {
@@ -140,12 +130,13 @@ public class User implements Serializable {
 		this.type = type;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", usercode=" + usercode + ", password=" + password + ", username=" + username
-				+ ", createtime=" + createtime + ", telephone=" + telephone + ", email=" + email + ", realname="
-				+ realname + ", leftmoney=" + leftmoney + ", usemoney=" + usemoney + ", status=" + status + ", type="
-				+ type + "]";
+	public int getRole_id() {
+		return role_id;
 	}
+
+	public void setRole_id(int role_id) {
+		this.role_id = role_id;
+	}
+
 	
 }
